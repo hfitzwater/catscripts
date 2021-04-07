@@ -1,6 +1,6 @@
 {
   "name": "catscripts",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "cat scripts property of the package.json in the current directory",
   "main": "./index.js",
   "scripts": {

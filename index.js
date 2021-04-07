@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const packageLocation = `${__dirname}/package.json`;
+const packageLocation = `${process.cwd()}/package.json`;
 const packageExists = fs.existsSync(packageLocation);
 
 if( packageExists ) {

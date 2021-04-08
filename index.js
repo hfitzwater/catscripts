@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const chalk = require('chalk');
 
 const packageLocation = `${process.cwd()}/package.json`;
 const packageExists = fs.existsSync(packageLocation);
@@ -12,13 +13,10 @@ if( packageExists ) {
     const rawStr = rawContents.toString('utf8');
     const jsonContents = JSON.parse(rawStr);
 
-    const scripts = Object.keys(jsonContents.scripts).map(key => {
-      return `${key}: ${jsonContents.scripts[key]}`;
+    Object.keys(jsonContents.scripts).forEach(key => {
+      process.stdout.write(chalk.green(key));
+      process.stdout.write(': ' + jsonContents.scripts[key] + '\n');
     });
-
-    const scriptStrs = scripts.join('\n');
-
-    process.stdout.write(scriptStrs);
   } catch( ex ) {
     process.stdout.write('Something went wrong parsing package.json');
   }

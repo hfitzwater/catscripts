@@ -6,6 +6,7 @@
   "scripts": {
     "test": "exit 0",
     "start": "node index.js",
+    "interactive": "node index.js -i",
     "deploy": "np --no-2fa"
   },
   "bin": {
@@ -27,6 +28,8 @@
     "np": "^7.4.0"
   },
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3",
+    "yargs": "^17.0.1"
   }
 }
